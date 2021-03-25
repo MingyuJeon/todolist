@@ -5,20 +5,20 @@
 
 # The user should be able to:
 
-[x] Add new a todo item
+- [x] Add new a todo item
 
-[x] Mark a todo item as done
+- [x] Mark a todo item as done
 
-[x] Delete a todo item
+- [x] Delete a todo item
 
-[x] The list should first show the pending todo items, once an item is marked as completed it should show it after the pending todo items.
+- [x] The list should first show the pending todo items, once an item is marked as completed it should show it after the pending todo items.
 
 **bonus**:
 
-[x] Allow to change the title of the todo item
+- [x] Allow to change the title of the todo item
 
-[x] Strike through of completed items
+- [x] Strike through of completed items
 
-[x] Using Typescript
+- [x] Using Typescript
 
-[ ] implement a dummy service layer to mock backend service calls
+- [ ] implement a dummy service layer to mock backend service calls
