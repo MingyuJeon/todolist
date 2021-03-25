@@ -10,7 +10,7 @@ function TodoItem({ id, done, text }: Item) {
     const dispatch = useTodoDispatch();
     const onToggleDone = () => dispatch({ type: 'TOGGLE', id }); // Mark a todo item as done or Strike through of completed item
     const onRemove = () => dispatch({ type: 'REMOVE', id }); // Delete a todo item
-    const onChange = (e: React.ChangeEvent<HTMLInputElement>) => setValue(e.target.value);
+    const onChange = (e: React.ChangeEvent<HTMLInputElement>) => setValue(e.target.value); // Allow to change the title of the todo item
     const onSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         dispatch({
@@ -18,7 +18,6 @@ function TodoItem({ id, done, text }: Item) {
             text: value,
             id
         });
-        setValue('');
         onToggleEdit(!editToggle);
     };
     return (
