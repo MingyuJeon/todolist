@@ -10,7 +10,7 @@ export type Action =
     | { type: 'CREATE'; text: string; }
     | { type: 'TOGGLE'; id: number; }
     | { type: 'REMOVE'; id: number; }
-    | { type: 'CHANGE'; id: number; text: string; };
+    | { type: 'EDIT'; id: number; text: string; };
 
 export type ItemsState = Item[];
 export type ItemDispatch = Dispatch<Action>;
