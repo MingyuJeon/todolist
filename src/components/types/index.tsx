@@ -1,6 +1,6 @@
 import { Dispatch, ReactNode } from 'react';
 
-export type Item = {
+export type Todo = {
     id: number;
     text: string;
     done: boolean;
@@ -12,8 +12,8 @@ export type Action =
     | { type: 'REMOVE'; id: number; }
     | { type: 'EDIT'; id: number; text: string; };
 
-export type ItemsState = Item[];
-export type ItemDispatch = Dispatch<Action>;
+export type TodoListState = Todo[];
+export type TodoDispatch = Dispatch<Action>;
 
 export interface ChildrenProps {
     children: ReactNode;

@@ -1,10 +1,10 @@
 import { memo, useState } from 'react';
 import { MdDone, MdDelete } from 'react-icons/md';
-import { CheckCircle, Remove, TodoItemBlock, Text, Input, InsertForm } from '../styles';
-import { useTodoDispatch } from './TodoContext';
-import { Item } from './types';
+import { CheckCircle, Remove, TodoItemBlock, Text, Input } from '../styles';
+import { useTodoDispatch } from './customHooks';
+import { Todo } from './types';
 
-function TodoItem({ id, done, text }: Item) {
+function TodoItem({ id, done, text }: Todo) {
     const [editToggle, onToggleEdit] = useState(false);
     const [value, setValue] = useState(text);
     const dispatch = useTodoDispatch();

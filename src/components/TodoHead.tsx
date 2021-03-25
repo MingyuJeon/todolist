@@ -1,22 +1,21 @@
-import { useTodoState } from './TodoContext';
+import { useTodoState } from './customHooks';
 import { TodoHeadBlock } from '../styles';
 
 function TodoHead() {
-    const days: string[] = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    const _date: Date = new Date();
-    const month: number = _date.getMonth();
-    const date: number = _date.getDate();
-    const year: number = _date.getFullYear();
-    const day: string = days[_date.getDay()];
-    const todayDate: string = `${month} / ${date} / ${year}`;
-
     const todos = useTodoState();
     const undoneTasks = todos.filter(todo => !todo.done);
+    const today = new Date();
+    const dateString = today.toLocaleDateString('en', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+    const dayName = today.toLocaleDateString('en', { weekday: 'long' });
 
     return (
         <TodoHeadBlock>
-            <h1>{todayDate}</h1>
-            <div className="day">{day}</div>
+            <h1>{dateString}</h1>
+            <div className="day">{dayName}</div>
             <div className="tasks-left">To do: {undoneTasks.length} left</div>
         </TodoHeadBlock>
     );

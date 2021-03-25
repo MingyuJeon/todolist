@@ -1,6 +1,6 @@
 import { memo, useState } from 'react';
 import { MdAdd } from 'react-icons/md';
-import { useTodoDispatch } from './TodoContext';
+import { useTodoDispatch } from './customHooks';
 import { CircleButton, Input, InsertForm, InsertFormPositioner } from '../styles';
 
 /**
@@ -16,10 +16,7 @@ function AddTodoItem() {
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => setValue(e.target.value);
     const onSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        dispatch({
-            type: 'CREATE',
-            text: value
-        });
+        dispatch({ type: 'CREATE', text: value });
         setValue('');
         setOpen(false);
     };
